@@ -110,5 +110,14 @@ def checkout(cart, coupons)
   consolidated = consolidate_cart(cart)
   consolidated = apply_coupons(consolidated,coupons)
   consolidated = apply_clearance(consolidated)
-  pp consolidated
+  grand_total = 0
+  total_index = 0 
+  while total_index < consolidated.count do 
+    item_price = consolidated[total_index][:price]
+    item_count = consolidated[total_index][:count]
+    item_total = item_price * item_count
+    grand_total += item_total
+    total_index += 1 
+  end
 end
+#[{:item=>"BEETS", :price=>2.5, :clearance=>false, :count=>1}]
