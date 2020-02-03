@@ -85,6 +85,8 @@ def apply_clearance(cart)
   #
   # REMEMBER: This method **should** update cart
 end
+#itterate through each item to check if it is on clearance 
+#if it's on clearance, update the price to be 20% less 
 
 def checkout(cart, coupons)
   # Consult README for inputs and outputs
