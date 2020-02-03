@@ -119,5 +119,10 @@ def checkout(cart, coupons)
     grand_total += item_total
     total_index += 1 
   end
+  if grand_total > 100
+    grand_total = grand_total * 0.9
+    grand_total.round(2)
+  end
+  grand_total
 end
 #[{:item=>"BEETS", :price=>2.5, :clearance=>false, :count=>1}]
