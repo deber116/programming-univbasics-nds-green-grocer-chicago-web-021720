@@ -84,6 +84,15 @@ def apply_clearance(cart)
   # Consult README for inputs and outputs
   #
   # REMEMBER: This method **should** update cart
+  cart_index = 0 
+  while cart_index < cart.count do 
+    if cart[cart_index][:clearance] == true
+      updated_price = cart[cart_index][:price] * 0.8
+      cart[cart_index][:price] updated_price.round(2)
+    end
+    cart_index += 1
+  end
+  cart
 end
 #itterate through each item to check if it is on clearance 
 #if it's on clearance, update the price to be 20% less 
